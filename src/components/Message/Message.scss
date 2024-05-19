@@ -1,24 +1,33 @@
-@use "../../scss/variables";
+@use "../../scss/colors" as c;
 
 .message {
-  background: yellow;
+  background: c.$bg-message;
   padding: 28px;
   width: 100%;
+  border-radius: 8px;
 
   .subject-team {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 4px;
+
+    .subject,
+    .team {
+      font-weight: 600;
+      font-size: 16px;
+    }
   }
 
   .question-date {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 8px;
 
     .question {
-      border: 2px solid red;
-      max-width: 75%;
+      max-width: 500px;
+      font-size: 14px;
     }
   }
 }

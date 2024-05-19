@@ -1,18 +1,19 @@
-$padding: 32px;
+@use "../../scss/colors" as c;
 
 .container {
+  background: c.$bg-container;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: start;
-  padding: $padding;
+  padding: 32px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 768px + 2 * $padding;
+  max-width: 768px;
   width: 100%;
 }

@@ -19,8 +19,8 @@ export default function Message({
     <li className="message">
       {/* subject & team */}
       <div className="subject-team">
-        <h2 className="subject">Freedom of action</h2>
-        <p className="team">Demo team</p>
+        <h2 className="subject">{subject}</h2>
+        <p className="team">{team}</p>
       </div>
       {/* question & date */}
       <div className="question-date">
@@ -28,9 +28,9 @@ export default function Message({
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
           laboriosam ipsum ullam doloribus quos pariatur.
         </p>
-        <p className="date">Apr 2023</p>
+        <p className="date">{createdAt}</p>
       </div>
-      <p className="text">I am very happy!</p>
+      <p className="text">{text}</p>
     </li>
   );
 }
