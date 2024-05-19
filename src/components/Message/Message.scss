@@ -1,0 +1,24 @@
+@use "../../scss/variables";
+
+.message {
+  background: yellow;
+  padding: 28px;
+  width: 100%;
+
+  .subject-team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .question-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .question {
+      border: 2px solid red;
+      max-width: 75%;
+    }
+  }
+}
