@@ -17,6 +17,14 @@
       font-weight: 600;
       font-size: 16px;
     }
+
+    .subject.rating__low {
+      color: c.$text-rating-low;
+    }
+
+    .subject.rating__high {
+      color: c.$text-rating-high;
+    }
   }
 
   .question-date {

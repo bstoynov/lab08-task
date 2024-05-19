@@ -1,3 +1,4 @@
+import { Rating } from "../../types";
 import "./Message.scss";
 
 interface MessageProps {
@@ -6,6 +7,7 @@ interface MessageProps {
   text: string;
   createdAt: string;
   team: string;
+  rating: Rating;
 }
 
 export default function Message({
@@ -14,12 +16,24 @@ export default function Message({
   text,
   createdAt,
   team,
+  rating,
 }: MessageProps) {
+  function getRatingClass(rating) {
+    console.log(rating);
+    switch (rating) {
+      case Rating.High:
+        return "rating__high";
+      case Rating.Low:
+        return "rating__low";
+      default:
+        return "kur";
+    }
+  }
   return (
-    <li className="message">
+    <div className="message">
       {/* subject & team */}
       <div className="subject-team">
-        <h2 className="subject">{subject}</h2>
+        <h2 className={`subject ${getRatingClass(rating)}`}>{subject}</h2>
         <p className="team">{team}</p>
       </div>
       {/* question & date */}
@@ -31,6 +45,6 @@ export default function Message({
         <p className="date">{createdAt}</p>
       </div>
       <p className="text">{text}</p>
-    </li>
+    </div>
   );
 }
