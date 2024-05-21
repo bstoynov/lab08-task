@@ -1,6 +1,9 @@
 .message-collapsed {
   position: relative;
+
   &-button {
+    outline: none;
+    border: none;
     width: 100%;
   }
 }

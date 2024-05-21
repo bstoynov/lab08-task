@@ -17,9 +17,6 @@ export default function Thread({ items }) {
       />
     );
   }
-
-  console.log("items length: ", items.length);
-
   const firstItem = items[0];
 
   return isCollapsed ? (
@@ -31,6 +28,7 @@ export default function Thread({ items }) {
         {renderMessage(firstItem)}
       </button>
       {/* placeholder background items */}
+      {}
     </li>
   ) : (
     <>

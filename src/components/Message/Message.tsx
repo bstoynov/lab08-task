@@ -38,10 +38,7 @@ export default function Message({
       </div>
       {/* question & date */}
       <div className="question-date">
-        <p className="question">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-          laboriosam ipsum ullam doloribus quos pariatur.
-        </p>
+        <p className="question">{question}</p>
         <p className="date">{createdAt}</p>
       </div>
       <p className="text">{text}</p>
