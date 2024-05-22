@@ -1,13 +1,14 @@
 @use "../../scss/colors" as c;
 
 .message {
+  color: c.$text-default;
   position: relative;
   z-index: 100;
   background: c.$bg-message;
   padding: 28px;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 2.5px 2.5px 10px 0px #aaa;
+  box-shadow: 2.5px 2.5px 10px 0px #e5e5e5;
   text-align: left;
 
   .subject-team {
@@ -25,11 +26,11 @@
     }
 
     .subject.rating__low {
-      color: c.$text-rating-low;
+      color: c.$subject-rating-low;
     }
 
     .subject.rating__high {
-      color: c.$text-rating-high;
+      color: c.$subject-rating-high;
     }
   }
 
@@ -40,9 +41,9 @@
     margin-bottom: 8px;
 
     .question {
-      max-width: 500px;
+      max-width: 70%;
       font-size: 13px;
-      color: green;
+      line-height: 1.5;
     }
 
     .date {
@@ -52,12 +53,13 @@
 
   .text {
     font-size: 14px;
+    font-weight: 500;
   }
 }
 
 .message-placeholder {
   background: white;
-  box-shadow: 2.5px 2.5px 10px 0px #aaa;
+  box-shadow: 2.5px 2.5px 10px 0px #e5e5e5;
   border-radius: 8px;
   position: absolute;
   top: 0;
@@ -75,12 +77,13 @@
   right: 16px;
   z-index: 100;
   padding: 4px 32px;
+  color: white;
 
   &.rating__high {
-    background: red;
+    background: c.$label-rating-high;
   }
 
   &.rating__low {
-    background: blue;
+    background: c.$label-rating-low;
   }
 }
