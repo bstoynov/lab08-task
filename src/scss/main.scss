@@ -2,6 +2,6 @@
 @use "./colors";
 @use "./reset";
 
-body {
+* {
   font-family: f.$font-primary;
 }
