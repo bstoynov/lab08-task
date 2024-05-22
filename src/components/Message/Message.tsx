@@ -26,7 +26,7 @@ export default function Message({
       case Rating.Low:
         return "rating__low";
       default:
-        return "kur";
+        return "";
     }
   }
   return (

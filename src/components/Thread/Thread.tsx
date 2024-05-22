@@ -20,7 +20,7 @@ export default function Thread({ items }) {
   const firstItem = items[0];
 
   return isCollapsed ? (
-    <li className="message-collapsed">
+    <li className="relative message-collapsed">
       <button
         className="message-collapsed-button"
         onClick={() => setIsCollapsed(false)}
@@ -28,7 +28,16 @@ export default function Thread({ items }) {
         {renderMessage(firstItem)}
       </button>
       {/* placeholder background items */}
-      {}
+      {[3, 2].map((item, i) => (
+        <div
+          key={item}
+          style={{
+            transform: `translate(${(i + 1) * 10}px, ${(i + 1) * 10}px)`,
+            zIndex: `${item * 1}`,
+          }}
+          className="message-placeholder"
+        />
+      ))}
     </li>
   ) : (
     <>
