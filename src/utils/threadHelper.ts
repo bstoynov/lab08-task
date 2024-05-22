@@ -21,7 +21,5 @@ export async function fetchThreads() {
   const result = await response.json();
   const threads = parseThreads(result);
 
-  console.log(threads);
-
   return threads;
 }

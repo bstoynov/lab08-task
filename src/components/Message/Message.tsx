@@ -19,7 +19,7 @@ export default function Message({
   rating,
 }: MessageProps) {
   function getRatingClass(rating) {
-    console.log(rating);
+    // console.log(rating);
     switch (rating) {
       case Rating.High:
         return "rating__high";

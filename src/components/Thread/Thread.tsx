@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Message from "../Message/Message";
 import "./Thread.scss";
+import { Rating } from "../../types";
 
 export default function Thread({ items }) {
   const [isCollapsed, setIsCollapsed] = useState(items.length > 1);
@@ -17,7 +18,19 @@ export default function Thread({ items }) {
       />
     );
   }
-  const firstItem = items[0];
+  const placeHolderItems = Array.from(Array(items.length - 1).keys()).reverse();
+
+  function getRatingClass(rating) {
+    console.log(rating);
+    switch (rating) {
+      case Rating.High:
+        return "rating__high";
+      case Rating.Low:
+        return "rating__low";
+      default:
+        return "";
+    }
+  }
 
   return isCollapsed ? (
     <li className="relative message-collapsed">
@@ -25,10 +38,10 @@ export default function Thread({ items }) {
         className="message-collapsed-button"
         onClick={() => setIsCollapsed(false)}
       >
-        {renderMessage(firstItem)}
+        {renderMessage(items[0])}
       </button>
-      {/* placeholder background items */}
-      {[3, 2].map((item, i) => (
+      {/* empty placeholder messages */}
+      {placeHolderItems.map((item, i) => (
         <div
           key={item}
           style={{
@@ -38,6 +51,10 @@ export default function Thread({ items }) {
           className="message-placeholder"
         />
       ))}
+      {/* number of items label */}
+      <p className={`message-label ${getRatingClass(items[0].rating)}`}>
+        {items.length} messages
+      </p>
     </li>
   ) : (
     <>
