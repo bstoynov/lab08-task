@@ -1,4 +1,6 @@
+import React from "react";
 import { Rating } from "../../types";
+import { getRatingClass } from "../../utils/styleHelper";
 import "./Message.scss";
 
 interface MessageProps {
@@ -18,16 +20,6 @@ export default function Message({
   team,
   rating,
 }: MessageProps) {
-  function getRatingClass(rating) {
-    switch (rating) {
-      case Rating.High:
-        return "rating__high";
-      case Rating.Low:
-        return "rating__low";
-      default:
-        return "";
-    }
-  }
   return (
     <div className="message">
       {/* subject & team */}

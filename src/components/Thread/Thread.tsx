@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Message from "../Message/Message";
 import "./Thread.scss";
-import { Rating } from "../../types";
+import { getRatingClass } from "../../utils/styleHelper";
 
 export default function Thread({ items }) {
   const [isCollapsed, setIsCollapsed] = useState(items.length > 1);
@@ -19,17 +19,6 @@ export default function Thread({ items }) {
     );
   }
   const placeHolderItems = Array.from(Array(items.length - 1).keys()).reverse();
-
-  function getRatingClass(rating) {
-    switch (rating) {
-      case Rating.High:
-        return "rating__high";
-      case Rating.Low:
-        return "rating__low";
-      default:
-        return "";
-    }
-  }
 
   return isCollapsed ? (
     <li className="relative message-collapsed">
