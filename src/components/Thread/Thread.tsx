@@ -21,7 +21,6 @@ export default function Thread({ items }) {
   const placeHolderItems = Array.from(Array(items.length - 1).keys()).reverse();
 
   function getRatingClass(rating) {
-    console.log(rating);
     switch (rating) {
       case Rating.High:
         return "rating__high";

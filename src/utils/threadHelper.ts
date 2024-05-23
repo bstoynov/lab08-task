@@ -1,11 +1,12 @@
 import { Rating, RawThread } from "../types";
+import { format } from "date-fns";
 
 function parseThreads(rawThreads: RawThread[][]) {
   return rawThreads.map((rawThread) =>
     rawThread.map(
       ({ score, created_at, text, question, team, id, subject }) => ({
         rating: score <= 5 ? Rating.Low : Rating.High,
-        createdAt: created_at,
+        createdAt: format(new Date(created_at), "MMM do"),
         text,
         question,
         team,
