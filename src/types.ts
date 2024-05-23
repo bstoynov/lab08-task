@@ -13,17 +13,13 @@ export interface RawThread {
 }
 
 export interface Thread {
-  questionId: number;
-  subjectId: number;
   rating: Rating;
-  threadId: string;
+  createdAt: string;
   text: string;
-  created_at: string;
-  acknowledged: boolean;
-  subject: string;
   question: string;
   team: string;
   id: string;
+  subject: string;
 }
 
 export enum Rating {

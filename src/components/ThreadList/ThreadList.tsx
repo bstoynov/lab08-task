@@ -1,3 +1,4 @@
+import React from "react";
 import "./ThreadList.scss";
 import Thread from "../Thread/Thread";
 

@@ -47,7 +47,7 @@ export default function Thread({ items }) {
   ) : (
     <>
       {items.map((item) => (
-        <li>{renderMessage(item)}</li>
+        <li key={item.id}>{renderMessage(item)}</li>
       ))}
     </>
   );
