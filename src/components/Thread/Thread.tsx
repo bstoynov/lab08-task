@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Message from "../Message/Message";
 import "./Thread.scss";
 import { getRatingClass } from "../../utils/styleHelper";
+import { Thread as ThreadType } from "../../types";
+
+interface Thread {
+  items: ThreadType[];
+}
 
 export default function Thread({ items }) {
   const [isCollapsed, setIsCollapsed] = useState(items.length > 1);
