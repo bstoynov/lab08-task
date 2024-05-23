@@ -3,7 +3,7 @@ import { Rating } from "../../types";
 import { getRatingClass } from "../../utils/styleHelper";
 import "./Message.scss";
 
-interface MessageProps {
+interface Message {
   subject: string;
   question: string;
   text: string;
@@ -19,7 +19,7 @@ export default function Message({
   createdAt,
   team,
   rating,
-}: MessageProps) {
+}: Message) {
   return (
     <div className="message">
       {/* subject & team */}
